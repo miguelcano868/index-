@@ -1,7 +1,16 @@
 ---
 title: "Distribuciones de frecuencias unidimensionales y bidimensionales"
 subtitle: "Fundamentos estadísticos y aplicación con R"
-author: "Miguel Ángel Cañola Barajas"
+
+author:
+  - name: "Miguel Ángel Cañola Barajas"
+    affiliation: "Universidad del Tolima"
+    affiliation-url: "https://www.ut.edu.co/"
+
+  - name: "Mariem Sofia Sterling Murcia"
+
+  - name: "Alisson Candia"
+
 date: today
 lang: es
 title-block-banner: "#A52A2A"
@@ -19,21 +28,6 @@ format:
     theme: dark
     highlight-style: monokai
     html-math-method: katex
-    smooth-scroll: true
-    link-external-newwindow: true
-    code-overflow: scroll
-    favicon: favicon.ico
-
-editor: visual
-
-knitr:
-  opts_chunk:
-    message: false
-    warning: false
-    fig.align: center
-    fig.width: 6
-    fig.height: 6
-    out.width: "60%"
 ---
 
 ```{r setup}
@@ -103,7 +97,7 @@ La distribución de frecuencias permite determinar cuántas observaciones corres
 Una tabla de frecuencias puede contener las siguientes columnas:
 
 | Símbolo | Nombre | Interpretación |
-|:--:|:---|:---|
+|:----------------------:|:-----------------------|:-----------------------|
 | $x_i$ | Valor o categoría | Valor observado de la variable |
 | $f_i$ | Frecuencia absoluta | Número de veces que aparece $x_i$ |
 | $F_i$ | Frecuencia absoluta acumulada | Número de observaciones hasta $x_i$ |
@@ -739,7 +733,7 @@ Es habitual utilizar:
 # Diferencia entre distribución unidimensional y bidimensional
 
 | Característica | Unidimensional | Bidimensional |
-|:---|:---|:---|
+|:-----------------------|:-----------------------|:-----------------------|
 | **Número de variables** | 1 | 2 |
 | **Objetivo** | Describir una variable | Analizar dos variables conjuntamente |
 | **Tabla principal** | Tabla de frecuencias | Tabla de contingencia |

@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Miguel Ángel Cañola Barajas">
+<meta name="author" content="Mariem Sofia Sterling Murcia">
+<meta name="author" content="Alisson Candia">
 
 <title>Distribuciones de frecuencias unidimensionales y bidimensionales</title>
 <style>
@@ -71,7 +73,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="index_files/libs/bootstrap/bootstrap-55d73c668ca809320c35260ddc76067b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<style>html{ scroll-behavior: smooth; }</style>
 <style>
 
       .quarto-title-block .quarto-title-banner {
@@ -135,16 +136,35 @@ window.Quarto = {
                       </div>
   </div>
     
-  
+  <div class="quarto-title-meta-author column-page-right">
+    <div class="quarto-title-meta-heading">Autores/as</div>
+    <div class="quarto-title-meta-heading">Afiliación</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Miguel Ángel Cañola Barajas </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://www.ut.edu.co/">
+              Universidad del Tolima
+              </a>
+            </p>
+        </div>
+      <div class="quarto-title-meta-contents">
+      <p class="author">Mariem Sofia Sterling Murcia </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+        </div>
+      <div class="quarto-title-meta-contents">
+      <p class="author">Alisson Candia </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+        </div>
+    </div>
+
   <div class="quarto-title-meta column-page-right">
 
-      <div>
-      <div class="quarto-title-meta-heading">Autor/a</div>
-      <div class="quarto-title-meta-contents">
-               <p>Miguel Ángel Cañola Barajas </p>
-            </div>
-    </div>
-      
+        
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
@@ -185,7 +205,7 @@ window.Quarto = {
 
 
 
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
@@ -206,7 +226,7 @@ body{
 </style>
 <section id="cargar-paquetes" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> .Cargar paquetes</h1>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <pre class="ipak cell-code"><code>  options(repos = c(CRAN="https://cloud.r-project.org"))
@@ -300,7 +320,7 @@ ipak(packages)</code></pre>
 </ul>
 <p>Ejemplo</p>
 <p>Supongamos que se consulta a 20 ciudadanos sobre el número de trámites realizados durante el último año:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tramites <span class="ot">&lt;-</span> <span class="fu">c</span>(   <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,   <span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span> )  </span>
@@ -323,7 +343,7 @@ ipak(packages)</code></pre>
 <p>La última frecuencia acumulada debe ser igual al tamaño de la muestra:</p>
 <p><span class="math display">Fk=nF_k=n</span></p>
 <p>En R</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>freq <span class="ot">&lt;-</span> <span class="fu">table</span>(tramites)</span>
@@ -417,7 +437,7 @@ ipak(packages)</code></pre>
 </table>
 <p>Construcción de una tabla de frecuencias en R</p>
 <p>Una forma sencilla de construir una tabla completa es:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>frecuencias <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(tramites))</span>
@@ -439,7 +459,7 @@ ipak(packages)</code></pre>
 </div>
 </div>
 <p>Para redondear:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>frecuencias<span class="sc">$</span>hi <span class="ot">&lt;-</span> <span class="fu">round</span>(frecuencias<span class="sc">$</span>hi, <span class="dv">4</span>)  </span>
@@ -461,7 +481,7 @@ ipak(packages)</code></pre>
 <p>Cuando la variable es cualitativa, los valores representan categorías.</p>
 <p>Ejemplo</p>
 <p>Supongamos una encuesta realizada a 30 ciudadanos sobre el nivel de satisfacción con un servicio público:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>satisfaccion <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alta"</span>, <span class="st">"Media"</span>, <span class="st">"Baja"</span>, <span class="st">"Alta"</span>, <span class="st">"Media"</span>, <span class="st">"Alta"</span>, <span class="st">"Baja"</span>, <span class="st">"Media"</span>,</span>
@@ -479,7 +499,7 @@ ipak(packages)</code></pre>
 </div>
 <p>La tabla puede complementarse con porcentajes:<br>
 </p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(satisfaccion)) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -491,7 +511,7 @@ ipak(packages)</code></pre>
 </div>
 </div>
 <p>Y expresarse en porcentaje:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(satisfaccion)) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -539,7 +559,7 @@ ipak(packages)</code></pre>
 </tbody>
 </table>
 <p>Gráfico de barras</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -554,9 +574,9 @@ ipak(packages)</code></pre>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -597,7 +617,7 @@ ipak(packages)</code></pre>
 <p>es el rango.</p>
 <p>Ejemplo con datos cuantitativos</p>
 <p>Supongamos que se dispone de los ingresos mensuales de 40 usuarios, expresados en millones de pesos:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
@@ -611,7 +631,7 @@ ipak(packages)</code></pre>
 </div>
 </div>
 <p>Podemos construir intervalos mediante <code>cut()</code>:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>intervalos <span class="ot">&lt;-</span> <span class="fu">cut</span>(ingresos, <span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, <span class="at">right =</span> <span class="cn">FALSE</span>)</span>
@@ -625,7 +645,7 @@ ipak(packages)</code></pre>
 </div>
 <p>Histograma</p>
 <p>Para representar una variable cuantitativa continua:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -641,9 +661,9 @@ ipak(packages)</code></pre>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -747,7 +767,7 @@ ipak(packages)</code></pre>
 <p>Las frecuencias condicionales son fundamentales para estudiar posibles relaciones entre dos variables.</p>
 <p>Ejemplo de tabla bidimensional en R</p>
 <p>Consideremos una encuesta realizada a 100 ciudadanos:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -769,7 +789,7 @@ ipak(packages)</code></pre>
 </div>
 </div>
 <p>Para obtener una tabla de contingencia:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">xtabs</span>(   Frecuencia <span class="sc">~</span> Modalidad <span class="sc">+</span> Satisfaccion,   <span class="at">data =</span> datos )  </span>
@@ -809,7 +829,7 @@ Modalidad    Alta Baja Media
 </table>
 <p>Totales marginales en R</p>
 <p>Podemos obtener los totales de filas y columnas mediante:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">addmargins</span>(tabla) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -823,7 +843,7 @@ Modalidad    Alta Baja Media Sum
 </div>
 </div>
 <p>También:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">margin.table</span>(tabla, <span class="dv">1</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -836,7 +856,7 @@ Presencial    Virtual
 </div>
 <p>permite obtener las frecuencias marginales de las filas.</p>
 <p>Mientras:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">margin.table</span>(tabla, <span class="dv">2</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -850,7 +870,7 @@ Presencial    Virtual
 <p>obtiene las frecuencias marginales de las columnas.</p>
 <p>Frecuencias relativas en R</p>
 <p>Para obtener las frecuencias relativas conjuntas:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(tabla) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -863,7 +883,7 @@ Modalidad    Alta Baja Media
 </div>
 </div>
 <p>Para obtener porcentajes:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">prop.table</span>(tabla) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -877,7 +897,7 @@ Modalidad    Alta Baja Media
 </div>
 <p>Porcentajes por fila</p>
 <p>Para estudiar la distribución de la satisfacción dentro de cada modalidad:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(tabla, <span class="dv">1</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -890,7 +910,7 @@ Modalidad    Alta Baja Media
 </div>
 </div>
 <p>En porcentaje:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">prop.table</span>(tabla, <span class="dv">1</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -905,7 +925,7 @@ Modalidad    Alta Baja Media
 <p>La opción <code>margin = 1</code> indica que los porcentajes se calculan <strong>por fila</strong>.</p>
 <p>Porcentajes por columna</p>
 <p>Para estudiar la distribución de la modalidad dentro de cada nivel de satisfacción:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(tabla, <span class="dv">2</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -918,7 +938,7 @@ Modalidad         Alta      Baja     Media
 </div>
 </div>
 <p>En porcentaje:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">prop.table</span>(tabla, <span class="dv">2</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -964,7 +984,7 @@ Modalidad     Alta  Baja Media
 <p>Es importante distinguir este resultado de un porcentaje calculado sobre el total general de la muestra.</p>
 <p>Visualización de una distribución bidimensional</p>
 <p>Una tabla de contingencia puede representarse mediante un gráfico de barras.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -985,9 +1005,9 @@ Modalidad     Alta  Baja Media
 <span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -996,7 +1016,7 @@ Modalidad     Alta  Baja Media
 <ul>
 <li>También puede utilizarse:</li>
 </ul>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos_grafico, <span class="fu">aes</span>(<span class="at">x =</span> Modalidad, <span class="at">y =</span> Frecuencia, <span class="at">fill =</span> Satisfaccion)) <span class="sc">+</span></span>
@@ -1009,16 +1029,16 @@ Modalidad     Alta  Baja Media
 <span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Barras proporcionales</p>
 <p>Para comparar estructuras porcentuales entre grupos:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos_grafico, <span class="fu">aes</span>(<span class="at">x =</span> Modalidad, <span class="at">y =</span> Frecuencia, <span class="at">fill =</span> Satisfaccion)) <span class="sc">+</span> </span>
@@ -1032,9 +1052,9 @@ Modalidad     Alta  Baja Media
 <span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1051,7 +1071,7 @@ Modalidad     Alta  Baja Media
 <p>Para evaluar formalmente la asociación entre dos variables categóricas puede utilizarse, entre otras herramientas, la <strong>prueba chi-cuadrado de independencia</strong>.</p>
 <p>Prueba chi-cuadrado en R</p>
 <p>A partir de una tabla de contingencia:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tabla) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1207,7 +1227,7 @@ X-squared = 4.381, df = 2, p-value = 0.1119</code></pre>
 <section id="función-general-para-construir-una-tabla-de-frecuencias" class="level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> Función general para construir una tabla de frecuencias</h1>
 <p>En R podemos crear una función reutilizable:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>tabla_frecuencias <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
@@ -1228,7 +1248,7 @@ X-squared = 4.381, df = 2, p-value = 0.1119</code></pre>
 </details>
 </div>
 <p>Aplicación:</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <details class="code-fold">
 <summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tabla_frecuencias</span>(satisfaccion) </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1421,11 +1441,6 @@ X-squared = 4.381, df = 2, p-value = 0.1119</code></pre>
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1744,5 +1759,4 @@ X-squared = 4.381, df = 2, p-value = 0.1119</code></pre>
 
 
 
-<script src="index_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
